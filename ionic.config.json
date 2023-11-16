@@ -1,0 +1,7 @@
+{
+  "name": "sermalucApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
