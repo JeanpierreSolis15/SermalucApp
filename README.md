@@ -4,7 +4,7 @@
 * Este proyecto es un App  implementado en Ionic con estas caracteristicas : 
 Ionic:
 
-   Ionic CLI                     : 6.20.1 (C:\Users\JeanPierre\AppData\Roaming\npm\node_modules\@ionic\cli)
+   Ionic CLI                     : 6.20.1
    Ionic Framework               : not installed
    @angular-devkit/build-angular : 17.0.1
    @angular-devkit/schematics    : 17.0.1
@@ -34,3 +34,6 @@ Capacitor:
 - npx cap add android  # Comando para generar la carpeta android, donde se contendra el apk al ser generado
 - npx cap add ios      # Comando para generar la carpeta iOS, donde nos ayudará a generar el ipa
 - npx cap open (ios - android) # Comando para abrir el motor por el cual sera generado el ipa o apk - android studio - xcode
+
+## NOTAS 
+- Para realizar esta prueba utilizamos un backend en node js que gracias a node-schedule podemos generar las tareas al servidor, luego al registrarnos en la base de datos en tiempo real de firebase también gracias a FCM enviamos una petición al servidor donde crea una notificación programada a la hora que el usuario indique. El backend se encuentra desplegado en la nube y el app funcional en android e iOS. Usamos Firebase Real Time Database, FCM. 
