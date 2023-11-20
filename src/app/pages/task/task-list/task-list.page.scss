@@ -1,0 +1,134 @@
+* {
+  font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.custom-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+ion-card-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.status-indicator {
+  width: 4px;
+  // height: 100%;
+  position: absolute;
+  left: 0;
+  // top: 0;
+  height: 70%;
+  z-index: 9999;
+  top: 14%;
+}
+
+.urgent {
+  background-color: #ff3b30;
+}
+
+.running {
+  background-color: #28ba62;
+}
+
+.card-status {
+  font-size: 14px;
+  color: red;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-right: 10px;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: left;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+ion-card-title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+ion-card-subtitle {
+  color: #8e8e93;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.card-info {
+  display: flex;
+  align-items: center;
+}
+
+.card-info ion-icon {
+  font-size: 1.2rem;
+  color: #8e8e93;
+  margin-right: 5px;
+}
+
+.card-info span {
+  font-size: 0.85rem;
+  color: #8e8e93;
+  margin-right: 15px;
+  margin-top: 4px;
+}
+
+.more-options {
+  font-size: 1.5rem;
+  color: #c7c7cc;
+  position: absolute;
+  right: 16px;
+}
+
+.card-status.urgent {
+  background-color: #ff3b30;
+}
+
+.card-status.running {
+  background-color: #28ba62;
+}
+
+ion-card-title,
+ion-card-subtitle {
+  margin-left: 10px;
+}
+
+ion-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 16px 16px 16px;
+  background: #ffffff;
+}
+
+ion-content {
+  --background: #ededed;
+}
+
+.status-indicator.close {
+  background-color: #ff851b; /* Color para 'Tarea Cerca' */
+}
+
+.status-indicator.past {
+  background-color: #aaaaaa; /* Color para 'Tarea Pasada' */
+}
+
+.status-indicator.upcoming {
+  background-color: #2ecc40; /* Color para 'Tarea Próxima' */
+}
+
+ion-button {
+  --ion-icon-stroke-width: 32px; /* Ajusta el tamaño del ícono */
+}
+
+ion-button ion-icon {
+  font-size: 1.5em; /* Ajusta el tamaño del ícono si es necesario */
+}
+
+ion-button {
+  font-size: 0.8em; /* Ajusta el tamaño del texto */
+}

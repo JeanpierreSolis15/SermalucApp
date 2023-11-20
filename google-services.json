@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "238218060421",
+    "project_id": "sermalucapp",
+    "storage_bucket": "sermalucapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238218060421:android:ebba059a35b0a324d4bfec",
+        "android_client_info": {
+          "package_name": "io.sermaluc.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY0kywikpyo2rAjjH5338KfOXBakofqd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

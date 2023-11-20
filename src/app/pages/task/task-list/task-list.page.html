@@ -1,0 +1,57 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios" color="primary">
+    <ion-title>Mis Tareas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/task-add">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="isLoading">
+    <ion-card class="custom-card" *ngFor="let dummy of [].constructor(6)">
+      <div class="status-indicator"></div>
+      <ion-card-header>
+        <div class="card-status"></div>
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="card-info">
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <ng-container *ngIf="!isLoading">
+    <ion-card *ngFor="let tarea of tareas" class="custom-card">
+      <div
+        class="status-indicator"
+        [ngClass]="{'close': getTaskStatus(tarea) === 'Tarea Cerca', 'past': getTaskStatus(tarea) === 'Tarea Pasada', 'upcoming': getTaskStatus(tarea) === 'Tarea Próxima'}"
+      ></div>
+      <ion-card-header>
+        <div class="card-status">{{ getTaskStatus(tarea) }}</div>
+        <ion-card-title>{{ tarea.nombre }}</ion-card-title>
+        <ion-card-subtitle>{{ tarea.descripcion }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="card-info">
+          <ion-icon name="time-outline"></ion-icon>
+          <span *ngIf="tarea.reminder; else noReminder"
+            >{{ tarea.fechaHora | date: 'shortTime' }}</span
+          >
+          <ng-template #noReminder>No existe recordatorio</ng-template>
+        </div>
+        <ion-icon
+          name="ellipsis-vertical"
+          class="more-options"
+          (click)="presentActionSheet(tarea)"
+        ></ion-icon>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>

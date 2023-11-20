@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar mode="ios" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/task-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Nueva Tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form #taskForm="ngForm">
+    <ion-item mode="ios">
+      <ion-label position="floating">Título</ion-label>
+      <ion-input
+        type="text"
+        required
+        [(ngModel)]="task.nombre"
+        name="nombre"
+        mode="ios"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item mode="ios">
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea
+        [(ngModel)]="task.descripcion"
+        name="descripcion"
+        mode="ios"
+      ></ion-textarea>
+    </ion-item>
+
+    <ion-item mode="ios">
+      <ion-label>Fecha y Hora</ion-label>
+      <ion-datetime
+        display-format="MMM DD, YYYY HH:mm"
+        picker-format="MMM DD YYYY HH:mm"
+        [(ngModel)]="task.fechaHora"
+        name="fechaHora"
+        mode="ios"
+      ></ion-datetime>
+    </ion-item>
+
+    <ion-item mode="ios">
+      <ion-label>¿Agregar recordatorio?</ion-label>
+      <ion-toggle
+        slot="start"
+        [(ngModel)]="task.reminder"
+        name="reminder"
+        mode="ios"
+      ></ion-toggle>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      type="submit"
+      (click)="createTask()"
+      mode="ios"
+      color="primary"
+      >Crear Tarea</ion-button
+    >
+  </form>
+</ion-content>
