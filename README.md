@@ -28,7 +28,7 @@ Capacitor:
 ## Deploy Android- iOS 
 - Para utilizar este proyecto, debes instalar primero las dependencias y luego iniciar el servidor:
 
-- npm install          # Instala todas las dependencias del proyecto
+- npm install --legacy-peer-deps         # Instala todas las dependencias del proyecto
 - ionic serve          # Inicia el app en modo desarrollo
 - ionic build          # Para compilar todos los cambios en el proyecto
 - npx cap add android  # Comando para generar la carpeta android, donde se contendra el apk al ser generado
