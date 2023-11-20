@@ -2,7 +2,7 @@ export interface Task {
   nombre: string;
   descripcion: string;
   reminder?: boolean;
-  fechaHora: Date | undefined;
+  fechaHora: Date | any;
   token?: string | null;
 }
 

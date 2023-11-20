@@ -37,3 +37,5 @@ Capacitor:
 
 ## NOTAS 
 - Para realizar esta prueba utilizamos un backend en node js que gracias a node-schedule podemos generar las tareas al servidor, luego al registrarnos en la base de datos en tiempo real de firebase también gracias a FCM enviamos una petición al servidor donde crea una notificación programada a la hora que el usuario indique. El backend se encuentra desplegado en la nube y el app funcional en android e iOS. Usamos Firebase Real Time Database, FCM. 
+
+![Alt text](photo-android.jpg)

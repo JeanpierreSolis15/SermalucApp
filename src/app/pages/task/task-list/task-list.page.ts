@@ -31,12 +31,18 @@ export class TaskListPage implements OnInit {
     this.taskService
       .getTasks()
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((tasks: Task[]) => {
-        console.info(tasks);
-        this.tareas = tasks;
-        this.LService.dismissLoader();
-        this.isLoading = false;
-      });
+      .subscribe(
+        (tasks: Task[]) => {
+          this.LService.dismissLoader();
+          console.info(tasks);
+          this.tareas = tasks;
+          this.isLoading = false;
+        },
+        (error) => {
+          console.error('Error al obtener tareas', error);
+          this.LService.dismissLoader();
+        }
+      );
   }
 
   ngOnDestroy() {

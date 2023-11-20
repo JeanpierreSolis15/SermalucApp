@@ -45,15 +45,16 @@ export class TaskAddPage implements OnInit {
     const token = localStorage.getItem('tokenFcm');
     // const token =
     // 'fY5AZsA0TwGD9IHPKT5tIG:APA91bFD87Ge4BI5ICqEalG7uMrrG9qi0lihV5ffVp8IvkPo779hbB4xRoCMuTBUBCR8LE-uoDOBpp1clCFARz6MH7XGLFQ9vKuNMxK4W9EUsJABzZB1L1AEStH-cmtq6qS7OiG-nq2M';
-    let fechaHoraDate;
+    let fechaHoraUTC;
     if (this.task.fechaHora) {
-      fechaHoraDate = new Date(this.task.fechaHora);
+      const localDate = new Date(this.task.fechaHora);
+      fechaHoraUTC = localDate.toISOString();
     }
 
     const data: Task = {
       nombre: this.task.nombre,
       descripcion: this.task.descripcion,
-      fechaHora: fechaHoraDate,
+      fechaHora: fechaHoraUTC,
       token: token,
     };
 
